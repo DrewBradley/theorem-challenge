@@ -8,6 +8,7 @@ import Home from './Home';
 import Messages from './Messages';
 import NavBar from './NavBar';
 import './App.css';
+import email from '../../src/email.logo.png'
 
 const App = () => {
   const [notifications, setNotifications] = useState([])
@@ -15,12 +16,21 @@ const App = () => {
   const addRandom = (title, date, image) => {
     const newNotification = {
       id: Date.now(),
-      title: faker.fake("{{company.companyName}}"),
-      date: faker.fake("{{date.past}}"),
-      image: faker.fake("{{image.animals}}")
+      title: faker.company.companyName(),
+      date: new Date(faker.date.past()).toLocaleString("en-US"),
+      image: `${faker.image.animals()}?random=${Date.now()}`
     }
     setNotifications(notifications => [...notifications, newNotification])
-    console.log(notifications)
+  }
+
+  const addEmail = () => {
+    const newNotification = {
+      id: Date.now(),
+      title: `New email from ${faker.company.companyName()}`,
+      date: new Date(faker.date.past()).toLocaleString("en-US"),
+      image: email
+    }
+    setNotifications(notifications => [...notifications, newNotification])
   }
 
   const deleteNotification = (id) => {
@@ -47,7 +57,10 @@ const App = () => {
         deleteNotification={deleteNotification} />
       <Switch>
         <Route exact path="/">
-          <Home addRandom={addRandom}/>
+          <Home 
+            addRandom={addRandom}
+            addEmail={addEmail}
+            />
         </Route>
         <Route path="/messages">
           <Messages 

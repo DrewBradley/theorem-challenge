@@ -1,6 +1,6 @@
 .NavBar {
   background-color: #FFFFFF;
-  height: 3rem;
+  height: 4rem;
   display: grid;
   grid-template-columns: 80% 20%;
   align-items: center;
@@ -11,10 +11,11 @@
   width: 50%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .navlinks img {
-  height: 1.5rem;
+  height: 2rem;
 }
 
 .navlink {
@@ -71,6 +72,13 @@ ul {
   padding: 0;
 }
 
+ul:before{
+  content:attr(aria-label);
+  font-size:120%;
+  font-weight:bold;
+  margin-left:-15px;
+}
+
 .notification-icon{
   position: relative;
 }
@@ -82,14 +90,20 @@ ul {
   border: 1px solid black;
   border-radius: 2px;
   z-index: 1;
-  width: 20rem;
+  width: 25rem;
+  height: 35rem;
   top: 100%;
   left: 50%;
-  margin-left: -17rem;
+  margin-left: -22rem;
   margin-top: 0;
+  box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.3);
 }
 
 .notification-icon:hover .DropDown {
   visibility: visible;
   background-color: #EFEFEF;
+}
+
+.DropDown {
+  overflow: scroll;
 }
