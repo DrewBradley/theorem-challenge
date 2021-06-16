@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
+import logo from '../../src/theorem-logo.png'
 
 
 const NavBar = ({notifications, deleteNotification}) => {
@@ -20,6 +21,7 @@ const NavBar = ({notifications, deleteNotification}) => {
   return (
     <div className="NavBar">
       <section className="navlinks">
+        <img src={logo}/>
         <NavLink 
           exact to="/" 
           className="navlink"
@@ -40,7 +42,7 @@ const NavBar = ({notifications, deleteNotification}) => {
         color="#B45AD3"/>
         {notifications.length}
         <ul className="DropDown">
-          Notifications
+          Notifications({notifications.length})
           { toDropDown }
         </ul>
       </div>
