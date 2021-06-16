@@ -2,3 +2,26 @@
   text-align: center;
 }
 
+.NavBar {
+  background-color: #EFEFEF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.notification-icon{
+  position: relative;
+}
+
+.notification-icon .DropDown {
+  visibility: hidden;
+  position: absolute;
+  display: inline;
+  border: 2px solid red;
+  z-index: 1;
+}
+
+.notification-icon:hover .DropDown {
+  visibility: visible;
+  background-color: aliceblue;
+}

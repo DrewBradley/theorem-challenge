@@ -4,21 +4,26 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import Home from './Home'
+import Home from './Home';
+import Messages from './Messages';
+import NavBar from './NavBar';
 import './App.css';
 
 const App = () => {
   const [notification, setNotification] = useState([])  
 
   return (
-    <Switch>
-      <Route exact path="/">
-        <Home/>
-      </Route>
-      <Route path="/messages">
-        <Messages />
-      </Route>
-    </Switch>
+    <div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/messages">
+          <Messages />
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
