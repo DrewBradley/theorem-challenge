@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import './NavBar.css'
 
 const NavBar = ({notifications, deleteNotification}) => {
   const toDropDown = notifications.map(note => {
@@ -15,8 +16,20 @@ const NavBar = ({notifications, deleteNotification}) => {
 
   return (
     <div className="NavBar">
-      <NavLink to="/">HOME</NavLink>
-      <NavLink to="/messages">MESSAGES</NavLink>
+      <section className="navlinks">
+        <NavLink 
+          exact to="/" 
+          className="navlink"
+          activeClassName="selected">
+          Home
+        </NavLink>
+        <NavLink 
+          to="/messages"
+          className="navlink"
+          activeClassName="selected">
+          Messages
+        </NavLink>
+      </section>
       <a className="notification-icon">BELL({notifications.length})
         <ul className="DropDown">
           Notifications

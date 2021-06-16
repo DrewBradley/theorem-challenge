@@ -1,53 +1,7 @@
 .App {
   text-align: center;
-}
-
-.NavBar {
-  background-color: #EFEFEF;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.dropdown-item {
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: repeat(1, 1fr);
-  margin: 0;
-}
-
-.dropdown-image {
-  grid-area: 1/1/1/1;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  margin: auto;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-}
-
-.notification-icon{
-  position: relative;
-}
-
-.notification-icon .DropDown {
-  visibility: hidden;
-  position: absolute;
-  display: inline;
-  border: 1px solid black;
-  border-radius: 6px;
-  z-index: 1;
-  width: 20rem;
-  top: 100%;
-  left: 50%;
-  margin-left: -17rem;
-  margin-top: 0;
-}
-
-.notification-icon:hover .DropDown {
-  visibility: visible;
-  background-color: aliceblue;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(158,158,158);
+  background: linear-gradient(90deg, rgba(158,158,158,1) 0%, rgba(222,222,222,1) 20%, rgba(255,255,255,1) 100%);
 }

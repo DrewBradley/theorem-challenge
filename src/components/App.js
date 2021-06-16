@@ -41,7 +41,7 @@ const App = () => {
   })
 
   return (
-    <div>
+    <div className="App">
       <NavBar 
         notifications={notifications}  
         deleteNotification={deleteNotification} />
