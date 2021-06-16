@@ -3,9 +3,11 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import faker from 'faker'
+import faker from 'faker';
+import emailjs from 'emailjs-com';
 import Home from './Home';
 import Messages from './Messages';
+import ViewMessage from './ViewMessage';
 import NavBar from './NavBar';
 import './App.css';
 import email from '../../src/email.logo.png'
@@ -24,12 +26,21 @@ const App = () => {
   }
 
   const addEmail = () => {
+    
     const newNotification = {
       id: Date.now(),
       title: `New email from ${faker.company.companyName()}`,
       date: new Date(faker.date.past()).toLocaleString("en-US"),
       image: email
     }
+
+    emailjs.send("service_f925vgp","template_fpdsajp", newNotification, "user_QJViOsyazMNdU9XLsF1KH")
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
     setNotifications(notifications => [...notifications, newNotification])
   }
 
@@ -64,6 +75,11 @@ const App = () => {
         </Route>
         <Route path="/messages">
           <Messages 
+            notifications={notifications}
+            deleteNotification={deleteNotification}  />
+        </Route>
+        <Route path="/messages/:id">
+          <ViewMessage 
             notifications={notifications}
             deleteNotification={deleteNotification}  />
         </Route>
