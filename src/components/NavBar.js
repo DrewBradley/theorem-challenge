@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
+
 
 const NavBar = ({notifications, deleteNotification}) => {
   const toDropDown = notifications.map(note => {
@@ -30,12 +33,17 @@ const NavBar = ({notifications, deleteNotification}) => {
           Messages
         </NavLink>
       </section>
-      <a className="notification-icon">BELL({notifications.length})
+      <div className="notification-icon">
+      <FontAwesomeIcon 
+        icon={faBell} 
+        size="lg"
+        color="#B45AD3"/>
+        {notifications.length}
         <ul className="DropDown">
           Notifications
           { toDropDown }
         </ul>
-      </a>
+      </div>
       
     </div>
   )
