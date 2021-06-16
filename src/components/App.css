@@ -21,7 +21,7 @@
   z-index: 1;
 }
 
-.notification-icon:hover .DropDown {
+.notification-icon:active .DropDown {
   visibility: visible;
   background-color: aliceblue;
 }

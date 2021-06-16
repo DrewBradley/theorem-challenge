@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Switch,
   Route,
@@ -10,14 +10,43 @@ import NavBar from './NavBar';
 import './App.css';
 
 const App = () => {
-  const [notification, setNotification] = useState([])  
+  const [notifications, setNotifications] = useState([])
+
+  const addRandom = (title, date, image) => {
+    const newNotification = {
+      id: Date.now(),
+      title: title,
+      date: date,
+      image: image
+    }
+    setNotifications(notifications => [...notifications, newNotification])
+  }
+
+  const deleteNotification = (id) => {
+    const newArray = notifications.filter(notifications => {
+      return notifications.id !== id
+    })
+    setNotifications(newArray)
+  }
+
+  useEffect(() => {
+    const localNotifications = localStorage.getItem('localNotifications')
+
+    localNotifications && setNotifications(JSON.parse(localNotifications))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('localNotifications', JSON.stringify(notifications))
+  })
 
   return (
     <div>
-      <NavBar />
+      <NavBar 
+        notifications={notifications}  
+        deleteNotification={deleteNotification} />
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home addRandom={addRandom}/>
         </Route>
         <Route path="/messages">
           <Messages />
