@@ -50,7 +50,9 @@ const App = () => {
           <Home addRandom={addRandom}/>
         </Route>
         <Route path="/messages">
-          <Messages />
+          <Messages 
+            notifications={notifications}
+            deleteNotification={deleteNotification}  />
         </Route>
       </Switch>
     </div>
