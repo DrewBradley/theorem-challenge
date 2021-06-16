@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = ({notifications, deleteNotification}) => {
   const toDropDown = notifications.map(note => {
-    return <li>
-        <p>{note.title}</p>
-        <button onClick={deleteNotification}>READ</button>
+    return <li className="dropdown-item">
+          <img src={`${note.image}`}/> 
+          <p>{note.title}</p>
+          <p>{note.date}</p>
+          <button onClick={() => deleteNotification(note.id)}>READ</button>
         </li>
   })
 
@@ -13,11 +15,12 @@ const NavBar = ({notifications, deleteNotification}) => {
     <div className="NavBar">
       <NavLink to="/">HOME</NavLink>
       <NavLink to="/messages">MESSAGES</NavLink>
-      <div className="notification-icon">BELL
+      <a className="notification-icon">BELL
         <ul className="DropDown">
+          Notifications
           { toDropDown }
         </ul>
-      </div>
+      </a>
       
     </div>
   )

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import {
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
+import faker from 'faker'
 import Home from './Home';
 import Messages from './Messages';
 import NavBar from './NavBar';
@@ -15,11 +15,12 @@ const App = () => {
   const addRandom = (title, date, image) => {
     const newNotification = {
       id: Date.now(),
-      title: title,
-      date: date,
-      image: image
+      title: faker.fake("{{company.companyName}}"),
+      date: faker.fake("{{date.past}}"),
+      image: faker.fake("{{image.animals}}")
     }
     setNotifications(notifications => [...notifications, newNotification])
+    console.log(notifications)
   }
 
   const deleteNotification = (id) => {
