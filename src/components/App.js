@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  Switch,
-  Route
-} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import faker from 'faker';
 import emailjs from 'emailjs-com';
 import Home from './Home';
@@ -73,7 +70,7 @@ const App = () => {
             addEmail={addEmail}
             />
         </Route>
-        <Route path="/messages">
+        <Route exact path="/messages">
           <Messages 
             notifications={notifications}
             deleteNotification={deleteNotification}  />

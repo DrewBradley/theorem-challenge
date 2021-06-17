@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import './Messages.css';
 
-const ViewMessage = ({notifications, deleteNotification}) => {
-  const singleMessage = notifications.filter(note => {
-    return <article className="dropdown-item">
-          <img src={`${note.image}`}/> 
-          <p>{note.title}</p>
-          <p>{note.date}</p>
-          <button onClick={() => deleteNotification(note.id)}>Delete</button>
-        </article>
+const ViewMessage = ({ notifications, deleteNotification }) => {
+  const params = useParams();
+
+  const note = notifications.filter(note => {
+    return note.id == params.id
   })
+
   return (
-    <section className="ViewMessage">
+    <section className="Messages">
+      { note.length ? 
+      <div className="message">
+          <img src={`${note[0].image}`}/> 
+          <article>
+            <h2>{note[0].title}</h2>
+            <p>{note[0].date}</p>
+          </article>
+          <article>
+            <button 
+              onClick={() => deleteNotification(note[0].id)}>Delete
+            </button>
+          </article>
+        </div> :
+        <div>
+          <h1>This email has been deleted!</h1>
+        </div> }
       
     </section>
   )
