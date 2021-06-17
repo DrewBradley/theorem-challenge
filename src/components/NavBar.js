@@ -7,6 +7,8 @@ import logo from '../../src/theorem-logo.png'
 
 
 const NavBar = ({notifications, deleteNotification}) => {
+  const [visible, setVisible] = useState(false);
+
   const toDropDown = notifications.map(note => {
     return <li className="dropdown-item">
           <img className="dropdown-image" src={`${note.image}`}/> 
@@ -35,7 +37,8 @@ const NavBar = ({notifications, deleteNotification}) => {
           Messages
         </NavLink>
       </section>
-      <div className="notification-icon">
+      <div className={ visible ? "notification-icon-show" : "notification-icon"} 
+      onClick={() => setVisible(!visible)}>
       <FontAwesomeIcon 
         icon={faBell} 
         size="lg"
