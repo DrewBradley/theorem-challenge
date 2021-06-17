@@ -1,13 +1,23 @@
 import React from 'react';
+import './Messages.css';
 
 const Messages = ({notifications, deleteNotification}) => {
   const messagelist = notifications.map(note => {
-    return <li className="dropdown-item">
+    return <div className="message">
           <img src={`${note.image}`}/> 
-          <p>{note.title}</p>
-          <p>{note.date}</p>
-          <button onClick={() => deleteNotification(note.id)}>Delete</button>
-        </li>
+          <article>
+            <h2>{note.title}</h2>
+            <p>{note.date}</p>
+          </article>
+          <article>
+            <button>
+              Read
+            </button>
+            <button 
+              onClick={() => deleteNotification(note.id)}>Delete
+            </button>
+          </article>
+        </div>
   })
   return (
     <section className="Messages">

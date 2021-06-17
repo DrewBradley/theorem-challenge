@@ -1,0 +1,33 @@
+.Messages {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.message {
+  display: grid;
+  grid-template-columns: 20% 70% 10%;
+  margin: 1%;
+  padding: 1%;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(222,222,222,1) 15%, rgba(158,158,158,1) 100%);
+  box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.Messages img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.Messages button {
+  background-color: #B45AD3;
+  color: white;
+  font-weight: 800;
+  padding: 2% 5%;
+  border: none;
+  border-radius: 6px;
+  width: 50px;
+  margin: 5% auto;
+  cursor: pointer!important;
+  box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.3);
+}
