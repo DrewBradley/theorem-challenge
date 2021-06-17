@@ -41,11 +41,12 @@ const NavBar = ({notifications, deleteNotification}) => {
         size="lg"
         color="#B45AD3"/>
         {notifications.length}
-        <ul 
-          className="DropDown"
-          aria-label={`Notifications(${notifications.length})`}>
-          { toDropDown }
-        </ul>
+        <div className="DropDown">
+          <h2 className="drop-title">Notifications({notifications.length})</h2>
+          <ul className="droplist">
+            { toDropDown }
+          </ul>
+        </div>
       </div>
       
     </div>
