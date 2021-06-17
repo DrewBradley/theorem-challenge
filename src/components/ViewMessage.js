@@ -42,10 +42,6 @@ const ViewMessage = ({ notifications, deleteNotification }) => {
         <div>
           <h1>This email has been deleted!</h1>
         </div> }
-        <Prompt
-          when={window.unload}
-          message='Leaving will delete this notification.'
-        />
     </section>
   )
 }
