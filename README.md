@@ -16,8 +16,11 @@ Follow wireframes provided by Albert De Guzman
 ## JS Libraries
 
 [React Router](https://reactrouter.com/web/guides/quick-start)
+
 [Faker](https://github.com/marak/Faker.js)
+
 [emailJS](https://www.npmjs.com/package/emailjs)
+
 [font awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
 
 ## Getting started
