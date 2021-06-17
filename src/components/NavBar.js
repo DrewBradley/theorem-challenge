@@ -42,7 +42,8 @@ const NavBar = ({notifications, deleteNotification}) => {
       <FontAwesomeIcon 
         icon={faBell} 
         size="lg"
-        color="#B45AD3"/>
+        color="#B45AD3"
+        style={{cursor: "pointer"}}/>
         {notifications.length}
         <div className="DropDown">
           <h2 className="drop-title">Notifications({notifications.length})</h2>
