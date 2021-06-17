@@ -1,4 +1,5 @@
 .NavBar {
+  z-index: 1;
   background-color: #FFFFFF;
   height: 4rem;
   display: grid;
@@ -89,7 +90,7 @@ ul:before{
   display: inline;
   border: 1px solid black;
   border-radius: 2px;
-  z-index: 1;
+  z-index: 2;
   width: 25rem;
   height: 35rem;
   top: 100%;
