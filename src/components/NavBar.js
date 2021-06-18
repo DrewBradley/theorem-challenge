@@ -10,7 +10,7 @@ const NavBar = ({notifications, deleteNotification}) => {
   const [visible, setVisible] = useState(false);
 
   const toDropDown = notifications.map(note => {
-    return <li className="dropdown-item">
+    return <li className="dropdown-item" key={note.id}>
           <img className="dropdown-image" src={`${note.image}`}/> 
           <section className="dropdown-info">
             <p>{note.title}</p>
