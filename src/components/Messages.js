@@ -8,7 +8,7 @@ const Messages = ({notifications, deleteNotification}) => {
     return <div className="message">
           <Link to={`messages/${note.id}`}>
           <img src={`${note.image}`}/> 
-          
+          </Link>
           <article>
             <h2>{note.title}</h2>
             <p>{note.date}</p>
