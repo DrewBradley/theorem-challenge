@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
@@ -47,9 +47,11 @@ const NavBar = ({notifications, deleteNotification}) => {
         {notifications.length}
         <div className="DropDown">
           <h2 className="drop-title">Notifications({notifications.length})</h2>
+          <Link exact to="messages">
           <ul className="droplist">
             { toDropDown }
           </ul>
+          </Link>
         </div>
       </div>
       

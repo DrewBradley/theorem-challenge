@@ -8,6 +8,11 @@
   box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.3);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .navlinks {
   width: 50%;
   display: flex;
